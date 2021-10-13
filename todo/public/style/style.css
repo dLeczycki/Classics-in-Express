@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-accent: rgb(172, 0, 172);
+    --subtle-accent: rgb(223, 187, 223);
+    --background-gray: #f5f5f5;
+    --light-gray: rgb(221, 221, 221);
+    --gray: #999;
+    --dark-gray: #444;
+    --shadow: rgba(0, 0, 0, 0.2);
+}
+
+html {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: var(--background-gray);
+}
+
+main {
+    height: 100%;
+    width: 500px;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 10px 0 30px;
+    font-size: 10rem;
+    color: var(--subtle-accent)
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--main-accent);
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid var(--main-accent);
+    cursor: pointer;
+    transition: .2s;
+}
+
+button.outline {
+    color: var(--main-accent);
+    background-color: #fff;
+    border: 2px solid var(--main-accent);
+}
+
+button.selected,
+button:hover {
+    color: white;
+    background-color: var(--subtle-accent);
+    border: 2px solid var(--subtle-accent);
+}
+
+button:focus {
+    border-color: var(--subtle-accent);
+    outline: 0;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5em;
+}
+
+input {
+    margin-top: .2em;
+    padding: .5em 0 .5em 1em;
+    width: 100%;
+    font-size: 28px;
+    color: var(--dark-gray);
+    box-shadow: 0 0 3px var(--shadow);
+    border: none;
+    z-index: 1;
+}
+
+input::placeholder {
+    color: var(--light-gray);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--main-accent);
+}
+
+ul.todo-list {
+    list-style-type: none;
+    width: 100%;
+}
+
+ul.todo-list li {
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+    min-height: 60px;
+    line-height: 60px;
+    font-size: 22px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px var(--shadow);
+    color: var(--dark-gray);
+    cursor: pointer;
+    border-top: 1px solid var(--light-gray);
+}
+
+ul.todo-list li.completed {
+    text-decoration: line-through;
+    color: var(--gray);
+}
+
+small {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--gray);
+}
