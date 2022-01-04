@@ -1,0 +1,15 @@
+{{> navigation}}
+<div class="form login-form">
+  <h1>Login</h1>
+  <hr>
+  {{#if error}} <small class="error generic-error">{{error}}</small>{{/if}}
+  <form action="/login" method="post">
+    <label for="email">Email:<input type="text" name="email" id="email"></label>
+    <label id="password" for="password">Password: <input type="password" name="password" id="password"><i
+        class="far fa-eye"></i></label>
+    {{#if message}} <small class="error">{{message}}</small>{{/if}}
+    <input type="submit" value="Submit" class="btn">
+  </form>
+  <small>Don't have an account? <a href="/signup">Sign up</a></small>
+</div>
+<script src='eye-script.js' defer></script>

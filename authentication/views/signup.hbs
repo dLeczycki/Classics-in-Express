@@ -1,0 +1,22 @@
+{{> navigation}}
+<div class="form register-form">
+  <h1>Sign up</h1>
+  <hr>
+  {{#if errors.exists}} <small class="error generic-error">{{errors.exists}}</small>{{/if}}
+  <form action="/signup" method="post">
+    <label for="email">
+      Email:
+      <input type="text" name="email" id="email">
+      {{#if errors.email}} <small class="error">{{errors.email}}</small>{{/if}}
+    </label>
+    <label id="password" for="password">
+      Password:
+      <input type="password" name="password" id="password">
+      <i class="far fa-eye"></i>
+      {{#if errors.password}} <small class="error">{{errors.password}}</small>{{/if}}
+    </label>
+    <input type="submit" value="Submit" class="btn">
+  </form>
+  <small>Already have an account? <a href="/login">Login</a></small>
+</div>
+<script src='eye-script.js' defer></script>

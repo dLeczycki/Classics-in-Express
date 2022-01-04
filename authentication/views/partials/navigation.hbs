@@ -1,0 +1,17 @@
+<nav>
+  <ul class="routes">
+    <li><a href="/">Home</a></li>
+    {{#if user}}
+    <li><a href="/protected">Protected</a></li>
+    {{/if}}
+  </ul>
+  <ul>
+    {{#if user}}
+    <li class="welcome">Welcome, {{user.email}}</li>
+    <li><a class='btn' href="/logout">Log out</a></li>
+    {{else}}
+    <li><a class='btn' href="/login">Login</a></li>
+    <li><a class='btn btn-outline' href="/signup">Signup</a></li>
+    {{/if}}
+  </ul>
+</nav>
